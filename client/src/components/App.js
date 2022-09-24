@@ -4,6 +4,7 @@ import SongList from './SongList';
 import { useState, useEffect } from 'react';
 
 import exampleSongData from '../data/exampleSongData';
+import searchSpotify from '../lib/searchSpotify'
 
 const player = new Audio();
 player.volume = 0.0075;
@@ -12,6 +13,8 @@ const App = () => {
   const [songList, setSongList] = useState([...exampleSongData]);
   const [nowPlaying, setNowPlaying] = useState();
   const [query, setQuery] = useState('');
+
+  searchSpotify();
 
   const handleOnMouseEnter = function(song) {
     player.src = song.preview_url;

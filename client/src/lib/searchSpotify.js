@@ -1,15 +1,22 @@
-import { API_KEY } from '../config/config.js';
+import {$, jQuery} from 'jquery';
+window.$ = $;
+window.jQuery = jQuery;
+// import { API_KEY } from '../config/config.js';
+var url = 'http://localhost:3001/';
+var searchSpotify = (query, callback) => {
+  $.get(url, {}, (data) => {
+    console.log('Tried to get, GOT:');
+    console.log(data);
+  });
+};
 
-// $.ajaxPrefilter(function (settings, _, jqXHR) {
-//   jqXHR.setRequestHeader('Authorization', API_KEY);
-// });
 
-// var searchSpotify = (query, callback) => {
-//   // TODO
-//   $.get('https://api.spotify.com/v1/search?', {
-//     q: query,
-//     type: "track,artist"
-//   }, (data) => { callback(data); });
-// };
+// function httpGet(theUrl)
+// {
+//     var xmlHttp = new XMLHttpRequest();
+//     xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+//     xmlHttp.send( null );
+//     return xmlHttp.responseText;
+// }
 
-// export default searchSpotify;
+export default searchSpotify;
