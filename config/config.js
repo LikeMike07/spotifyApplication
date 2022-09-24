@@ -1,2 +1,0 @@
-var CLIENT_SECRET = '5b2d569aed6548428f76fecf536a7ffe';
-var CLIENT_ID = '5429a2c5b17042eba72c99d85e97a4e4';
